@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <module>
 	<name>psatolyeproducttocategory</name>
-	<displayName><![CDATA[PS At&ouml;lye Product to Category]]></displayName>
+	<displayName><![CDATA[Product to Category by PS At&ouml;lye]]></displayName>
 	<version><![CDATA[1]]></version>
 	<description><![CDATA[Adds and Removes Products to a Category Fast and Easy]]></description>
 	<author><![CDATA[Bora Yal&ccedil;ın]]></author>
