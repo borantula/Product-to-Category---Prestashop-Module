@@ -120,7 +120,7 @@ class PSAtolyeProducttoCategory extends Module {
 				<option value="remove"><?php echo $this->l('Remove from Category');?></option>
 			</select>
 			</p>
-			<p><?php echo $this->l('Do you want to add or remove them from the parent categories of selected category?');?></p>
+			<p><?php echo $this->l('Do you want to add or remove them from the parent categories of selected category? (Except "Home" category)');?></p>
 			<p>
 			<select name="recursive">
 				<option value="true"><?php echo $this->l('Yes, add/remove from parents too');?></option>
@@ -171,7 +171,10 @@ class PSAtolyeProducttoCategory extends Module {
 	    $parent_ids = array();
 	    foreach($parents as $p)
 	    {
-	        $parent_ids[] = $p['id_category'];
+	    	//skip the Home category		
+    		if($p == 1)continue;
+
+        $parent_ids[] = $p['id_category'];
 	    }
 	  }
 
