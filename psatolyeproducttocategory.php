@@ -74,9 +74,14 @@ class PSAtolyeProducttoCategory extends Module {
 		?>
 		</div>
 		<?php
-
+		echo '<pre>';
 		$categories = Category::getSimpleCategories(Configuration::get('PS_LANG_DEFAULT'));
 
+		print_r($this->product_id_exists(312));
+		echo '<br/><br/><br/><br/>';
+		var_dump($this->product_id_exists(1231231));
+
+		echo '</pre>';
 		?>
 
 		<style>
@@ -184,6 +189,11 @@ class PSAtolyeProducttoCategory extends Module {
 		//add remove
 		foreach ($products as $keyproduct => $product) {
 			
+			if( $this->product_id_exists($product) == false ) {
+				echo '<p>'.$product.' is a wrong product ID!'.'</p>';
+				continue;
+			}
+
 			$theproduct = new Product( $product );
 
 			if($action == 'add') {
@@ -213,4 +223,13 @@ class PSAtolyeProducttoCategory extends Module {
 		return true;
 		
 	}
+
+
+	function product_id_exists($id_product){
+
+		$exists = Db::getInstance()->getValue('SELECT id_product FROM '._DB_PREFIX_.'product WHERE id_product="'.pSQL($id_product).'"');
+		return $exists;
+	}
+
+
 }
