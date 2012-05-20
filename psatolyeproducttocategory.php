@@ -74,14 +74,9 @@ class PSAtolyeProducttoCategory extends Module {
 		?>
 		</div>
 		<?php
-		echo '<pre>';
 		$categories = Category::getSimpleCategories(Configuration::get('PS_LANG_DEFAULT'));
 
-		print_r($this->product_id_exists(312));
-		echo '<br/><br/><br/><br/>';
-		var_dump($this->product_id_exists(1231231));
-
-		echo '</pre>';
+		
 		?>
 
 		<style>
